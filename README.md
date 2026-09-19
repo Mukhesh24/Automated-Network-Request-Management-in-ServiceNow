@@ -509,10 +509,11 @@ Opened on behalf of
         +----> User Name
         |
         +----> Phone Number
+```
 
 This reduces duplicate data entry and improves the consistency of requester information.
 
-Activity 5 — Navigation Flow
+## Activity 5 — Navigation Flow
 
 The Navigation Flow provides a path for users to access and submit the Network Request through the ServiceNow Service Portal.
 
@@ -615,3 +616,132 @@ Catalog UI Policy configuration
 Structured and user-friendly request submission experience
 
 The completed UI configuration provides the foundation for users to submit network requests through a standardized ServiceNow interface.
+
+
+# Phase 4 — Project Planning Phase
+
+## Overview
+
+Phase 4 focuses on planning the complete development and delivery of the **Automated Network Request Management** project.
+
+The planning activity defines the project backlog, user stories, effort estimation, sprint schedule, project tracking, velocity, and burndown plan required to take the project from initial requirements through final demonstration.
+
+## Project Planning Objectives
+
+- Define the complete project work in an organized backlog.
+- Break the project into manageable sprints.
+- Define user stories and implementation tasks.
+- Estimate the effort using story points.
+- Assign priorities to project requirements.
+- Establish project milestones and timelines.
+- Track planned and completed work.
+- Calculate project velocity.
+- Monitor remaining work using a burndown chart.
+- Establish the final project completion plan.
+
+## Product Backlog
+
+The product backlog contains the major requirements and tasks required to complete the project.
+
+| Sprint | Functional Requirement / Epic | User Story | Story Points | Priority |
+|---|---|---|---:|---|
+| Sprint 1 | Requirement Analysis | Define the problem, users, requirements and expected solution | 3 | High |
+| Sprint 1 | Requirement Analysis | Define functional and non-functional requirements | 3 | High |
+| Sprint 1 | Project Planning | Prepare backlog, priorities and sprint schedule | 2 | High |
+| Sprint 2 | Project Design | Design the system architecture and data flow | 4 | High |
+| Sprint 2 | Project Design | Define the required data structure and system components | 3 | High |
+| Sprint 3 | Project Development | Implement the core project functionality | 5 | High |
+| Sprint 3 | Project Development | Implement the required forms, workflows and automation | 5 | High |
+| Sprint 4 | Project Development | Test and refine the implemented functionality | 4 | High |
+| Sprint 4 | Project Documentation | Prepare implementation evidence and technical documentation | 3 | Medium |
+| Sprint 5 | Project Documentation | Finalize project documentation | 3 | High |
+| Sprint 5 | Project Demonstration | Prepare and demonstrate the completed project | 3 | High |
+
+## Sprint Schedule
+
+The project is divided into multiple sprints so that the work can be completed systematically.
+
+| Sprint | Duration | Planned Work |
+|---|---|---|
+| Sprint 1 | 2 Days | Requirement analysis and project planning |
+| Sprint 2 | 2 Days | Project design and architecture |
+| Sprint 3 | 3 Days | Project development and configuration |
+| Sprint 4 | 2 Days | Testing, refinement and implementation evidence |
+| Sprint 5 | 3 Days | Documentation and final demonstration |
+
+## Project Timeline
+
+The project follows the sequence:
+
+```text
+Ideation
+   ↓
+Requirement Analysis
+   ↓
+Project Design
+   ↓
+Project Planning
+   ↓
+Project Development
+   ↓
+Project Documentation
+   ↓
+Project Demonstration
+   ↓
+Project Completion
+```
+## Project Tracker
+Work Area	Planned Activity	Status
+Requirements	Define requirements and user needs	Completed
+Design	Prepare architecture and system design	Completed
+Planning	Prepare backlog, sprints and estimation	Completed
+Development	Build the project functionality	Planned
+Testing	Validate implemented functionality	Planned
+Documentation	Prepare final project documentation	Planned
+Demonstration	Demonstrate the completed solution	Planned
+## Velocity
+
+Velocity is used to measure the amount of planned work completed during each sprint.
+
+The total story points are distributed across the planned sprints to provide a measurable estimate of project progress.
+
+Average Velocity = Total Completed Story Points ÷ Number of Completed Sprints
+
+## Burndown Plan
+
+The burndown chart is used to track the remaining project work throughout the sprint schedule.
+
+Total Project Work
+        |
+        v
+   Sprint Planning
+        |
+        v
+   Work Completed
+        |
+        v
+Remaining Work
+        |
+        v
+      Zero
+        |
+        v
+Project Completion
+
+The target is to reduce the remaining work to zero by the final project completion date.
+
+## Project Completion Plan
+
+The project will be considered complete after:
+
+Required project analysis is completed.
+System design is finalized.
+Planned functionality is developed.
+Testing and refinement are completed.
+Project documentation is finalized.
+Final project demonstration is completed.
+Expected Outcome
+
+Phase 4 establishes the complete execution plan for the project. The resulting backlog, sprint schedule, estimation, tracker, velocity and burndown plan provide a structured approach for managing the project from development through final demonstration.
+
+Final Project Completion Date: 19 September 2026
