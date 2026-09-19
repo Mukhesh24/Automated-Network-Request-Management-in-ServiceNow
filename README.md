@@ -358,3 +358,260 @@ The phase defines:
 - Network Request table
 - Network Request fields
 - Backend workflow and automation structure
+
+---
+
+# Phase 3 — UI/UX Development & Customization
+
+## Phase Overview
+
+Phase 3 focuses on designing and customizing the ServiceNow user interface for the Automated Network Request Management solution.
+
+The phase covers Service Catalog creation, catalog variables, variable sets, navigation flow, and Catalog UI Policies to provide a structured and user-friendly request experience.
+
+---
+
+## Interface Design
+
+The ServiceNow interface is customized to provide a simple and user-friendly experience for network requesters.
+
+The interface design includes:
+
+- Service Catalog and Catalog Item configuration
+- Network Request form
+- Requester Information variable set
+- Catalog variables
+- Auto-populated requester information
+- Conditional field visibility
+- Catalog UI Policies
+- Service Portal navigation
+- Request submission and status visibility
+
+---
+
+## Activity 1 — Creation of Service Catalog
+
+### Description
+
+A dedicated **Network Request** catalog item is created in ServiceNow to allow users to submit network service requests through the Service Catalog.
+
+### Configuration
+
+| Field | Configuration |
+|---|---|
+| Catalog Item | Network Request |
+| Catalog | Service Catalog |
+| Category | Network |
+| Short Description | Network Request Management |
+
+### Procedure
+
+1. Navigate to **Application Navigator**.
+2. Search for **Service Catalog**.
+3. Navigate to **Service Catalog → Maintain Items**.
+4. Click **New**.
+5. Enter the name as **Network Request**.
+6. Select **Service Catalog** as the Catalog.
+7. Select **Network** as the Category.
+8. Enter **Network Request Management** as the Short Description.
+9. Save the Catalog Item.
+
+---
+
+## Activity 2 — Variables Configuration
+
+### Description
+
+Catalog variables are configured to collect the information required to process a network request.
+
+Variables can be configured using different types such as:
+
+- Single Line Text
+- Multi Line Text
+- Reference
+- Multiple Choice
+
+Additional properties such as mandatory, read-only, tooltip, example text, and auto-population can also be configured based on the requirement.
+
+### Configuration Procedure
+
+1. Open the **Network Request** Catalog Item.
+2. Navigate to the **Variables** related list.
+3. Click **New**.
+4. Select the required variable type.
+5. Enter the Question and Name.
+6. Configure the Order value.
+7. Configure Tooltip and Example Text where required.
+8. Configure Mandatory and Read Only properties as required.
+9. Configure Auto-populate when a variable depends on another variable.
+10. Save the variable.
+
+---
+
+## Activity 3 — Variables Creation
+
+The following variables are configured for the **Network Request** Catalog Item.
+
+| S.No | Variable Name | Type | Choices / Values |
+|---:|---|---|---|
+| 1 | Requested For | Single Line Text | — |
+| 2 | Mobile Number | Single Line Text | — |
+| 3 | Type of Connection | Multiple Choice | New / Existing |
+| 4 | Enter your Existing ID | Single Line Text | — |
+| 5 | Total Amount | Single Line Text | — |
+| 6 | Mode of Payment | Multiple Choice | UPI / CARD |
+| 7 | Address | Single Line Text | — |
+
+---
+
+## Activity 4 — Variable Set Configuration
+
+### Description
+
+A **Requester Information** variable set is configured to improve form usability and organize requester-related information.
+
+The variable set is associated with the **Network Request** Catalog Item.
+
+### Variable Set Configuration
+
+| Field | Configuration |
+|---|---|
+| Title | Requester Information |
+| Internal Name | requester_information |
+| Type | Single Row |
+| Order | 50 |
+| Display Title | Enabled |
+| Layout | 2 Columns Wide |
+
+### Variables in Requester Information
+
+| S.No | Variable Name | Type | Reference / Configuration |
+|---:|---|---|---|
+| 1 | Opened on behalf of | Reference | User [sys_user] |
+| 2 | Email ID | Single Line Text | Auto-populated from Opened on behalf of |
+| 3 | User Name | Single Line Text | Auto-populated from Opened on behalf of |
+| 4 | Phone Number | Single Line Text | Auto-populated from Opened on behalf of |
+
+### Auto-Population
+
+The requester information variables use the selected **Opened on behalf of** user to automatically populate related information.
+
+For example:
+
+```text
+Opened on behalf of
+        |
+        v
+   User [sys_user]
+        |
+        +----> Email ID
+        |
+        +----> User Name
+        |
+        +----> Phone Number
+
+This reduces duplicate data entry and improves the consistency of requester information.
+
+Activity 5 — Navigation Flow
+
+The Navigation Flow provides a path for users to access and submit the Network Request through the ServiceNow Service Portal.
+
+Request Flow
+ServiceNow PDI
+      |
+      v
+Service Portal
+      |
+      v
+Search for Network Request
+      |
+      v
+Network Request Catalog Item
+      |
+      v
+Fill Required Details
+      |
+      v
+Submit Request
+      |
+      v
+Request Number Generated
+      |
+      v
+User Receives Notification
+Navigation Procedure
+Log in to the ServiceNow PDI.
+Open the Service Portal.
+Navigate to the Service Catalog.
+Search for Network Request.
+Open the Network Request Catalog Item.
+Fill in the required details.
+Submit the request.
+A new request is generated with a request number.
+The user receives the relevant notification.
+Activity 6 — Catalog UI Policy
+Description
+
+Catalog UI Policies are used to dynamically control the visibility of fields based on user selections.
+
+For the Network Request Catalog Item, conditional logic is configured so that additional fields can appear when specific options are selected.
+
+Scenario
+
+When the user selects:
+
+Type of Connection = Existing
+
+the Enter your Existing ID field becomes visible.
+
+Configuration
+Property	Configuration
+Applies to	Catalog Item
+Catalog Item	Network Request
+Condition	Type of Connection is Existing
+UI Policy Action	Enter your Existing ID
+Visible	True
+Procedure
+Navigate to the Network Request Catalog Item.
+Open the Catalog UI Policies related list.
+Click New.
+Select Catalog Item as the applicable type.
+Select Network Request as the Catalog Item.
+Enter a suitable Short Description.
+Configure the condition:
+Type of Connection is Existing
+Save the Catalog UI Policy.
+Open the UI Policy Actions related list.
+Create a new UI Policy Action.
+Select the variable:
+enter_your_existing_id
+Set Visible = True.
+Update the UI Policy.
+Test the behavior on the Catalog form.
+UI Policy Flow
+User selects Type of Connection
+                |
+                v
+       Is it "Existing"?
+          /          \
+        Yes           No
+         |             |
+         v             v
+Show Existing ID    Keep field
+     field            hidden
+Phase 3 — UI/UX Outcome
+
+Phase 3 establishes the user-facing interface for the Automated Network Request Management solution.
+
+The phase delivers:
+
+Network Request Service Catalog Item
+Network Request variables
+Requester Information variable set
+Auto-populated requester details
+Service Portal navigation flow
+Conditional field visibility
+Catalog UI Policy configuration
+Structured and user-friendly request submission experience
+
+The completed UI configuration provides the foundation for users to submit network requests through a standardized ServiceNow interface.
